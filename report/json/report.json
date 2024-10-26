@@ -68,7 +68,7 @@
       "line": 0,
       "specs": [
         {
-          "title": "TC 1 - Successfull login & add item to cart using STANDARD user",
+          "title": "TC 1 - Successfull login until Checkout item from Cart using STANDARD user",
           "ok": true,
           "tags": [],
           "tests": [
@@ -82,25 +82,25 @@
                 {
                   "workerIndex": 0,
                   "status": "passed",
-                  "duration": 1049,
+                  "duration": 1072,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2024-10-26T10:32:15.509Z",
+                  "startTime": "2024-10-26T11:04:21.028Z",
                   "attachments": []
                 }
               ],
               "status": "expected"
             }
           ],
-          "id": "2f9c6d2ba318db8e0d5f-154683e4a5a70f3a0632",
+          "id": "2f9c6d2ba318db8e0d5f-808e4779985dd02a64ef",
           "file": "ui/saucedemo-po.spec.js",
           "line": 4,
           "column": 1
         },
         {
-          "title": "TC 2 - Successfull login & add item to cart using VISUAL user",
+          "title": "TC 2 - Successfull login until Checkout item from Cart using VISUAL user",
           "ok": true,
           "tags": [],
           "tests": [
@@ -114,21 +114,21 @@
                 {
                   "workerIndex": 1,
                   "status": "passed",
-                  "duration": 921,
+                  "duration": 1138,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2024-10-26T10:32:15.509Z",
+                  "startTime": "2024-10-26T11:04:21.028Z",
                   "attachments": []
                 }
               ],
               "status": "expected"
             }
           ],
-          "id": "2f9c6d2ba318db8e0d5f-7140b04651afd7558336",
+          "id": "2f9c6d2ba318db8e0d5f-71850147afa4c5c48d32",
           "file": "ui/saucedemo-po.spec.js",
-          "line": 16,
+          "line": 21,
           "column": 1
         }
       ]
@@ -136,8 +136,8 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2024-10-26T10:32:15.222Z",
-    "duration": 1534.808,
+    "startTime": "2024-10-26T11:04:20.739Z",
+    "duration": 1882.6509999999998,
     "expected": 2,
     "skipped": 0,
     "unexpected": 0,
