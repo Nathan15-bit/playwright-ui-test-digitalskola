@@ -1,7 +1,7 @@
 const { afterEach } = require('node:test');
 const { test } = require('./base/base-test');
 
-test('TC 1 - Successfull login until Checkout item from Cart using STANDARD user', async ({ loginPage, dashboardPage, cartPage }) => {
+test('TC 1 - Successfull login until Checkout item from Cart using STANDARD user', {tag: ['@page-object', '@smoke']}, async ({ loginPage, dashboardPage, cartPage }) => {
 
     await loginPage.login(process.env.STANDARD_USER, process.env.PASSWORD)
     await dashboardPage.validateOnPage()
@@ -18,7 +18,7 @@ test('TC 1 - Successfull login until Checkout item from Cart using STANDARD user
 });
 
 
-test('TC 2 - Successfull login until Checkout item from Cart using VISUAL user', async ({ loginPage, dashboardPage, cartPage }) => {
+test('TC 2 - Successfull login until Checkout item from Cart using VISUAL user', {tag: ['@mobile']}, async ({ loginPage, dashboardPage, cartPage }) => {
    
     await loginPage.login(process.env.VISUAL_USER, process.env.PASSWORD)
     await dashboardPage.validateOnPage()
@@ -44,7 +44,12 @@ test('TC 2 - Successfull login until Checkout item from Cart using VISUAL user',
 
 test.afterEach(async ({ page }, testInfo) => {
     if (testInfo.status != testInfo.expectedStatus){
-       await page.screenshot({ path: 'failed-screenshot.png', fullPage: true }) 
+       const image = await page.screenshot({ fullPage: true }) 
+       testInfo.attach('failed test', {
+        body: image,
+        contentType: 'image/png',
+       })
+       //await page.screenshot({ path: 'failed-screenshot.png', fullPage: true }) 
     }
     await page.close()
 });

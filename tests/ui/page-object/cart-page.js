@@ -2,6 +2,7 @@ const { expect } = require("@playwright/test");
 
 export class CartPage {
     constructor(page) {
+        this.page = page
         this.cartTitle = page.getByText('Your Cart');
         this.itemName = page.getByText('Sauce Labs Backpack');
         this.checkoutButton = page.locator('[id="checkout"]');
@@ -15,10 +16,12 @@ export class CartPage {
 
     async validateOnCartIcon() {
         await expect(this.cartTitle).toBeVisible();
+        await expect(this.page).toHaveScreenshot('cart-page.png');
     }
 
     async validateAddedImteDisplayed() {
         await expect(this.itemName).toBeVisible();
+        await expect(this.page).toHaveScreenshot('cart-page.png');
     }
 
     async checkoutTheItem(){
@@ -53,6 +56,7 @@ export class CartPage {
 
     async validateSuccessfulCheckoutPage() {
         await expect(this.checkoutCompletedPage).toBeVisible();
+        await expect(this.page).toHaveScreenshot('successful-checkout-page.png');
     }
 
 }

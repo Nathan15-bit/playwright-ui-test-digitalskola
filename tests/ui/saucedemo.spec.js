@@ -1,6 +1,6 @@
 const { test, expect } = require('@playwright/test');
 
-test.describe('Web UI Demo', () => {
+test.describe('Web UI Demo', {tag: ['@smoke']}, () => {
     test('TC-1 Successful login using standard user until checkout item', async ({ page }) => {
 
         //Login
@@ -45,13 +45,8 @@ test.describe('Web UI Demo', () => {
         await expect(page.getByText('Checkout: Complete!')).toBeVisible()
         await expect(page.getByText('Thank you for your order!')).toBeVisible()
         await page.waitForTimeout(1000)
-
-
     });    
-});
 
-
-test.describe('Web UI Demo', () => {
     test('TC-2 Successful login using Visual user', async ({ page }) => {
 
         //Login
@@ -66,5 +61,24 @@ test.describe('Web UI Demo', () => {
         await expect(page.getByText('Swag Labs')).toBeVisible()
         await expect(page.getByRole('button', { name: 'Open Menu' })).toBeVisible()
         await page.waitForTimeout(1000)
-    });    
+    });  
 });
+
+
+// test.describe('Web UI Demo', () => {
+//     test('TC-2 Successful login using Visual user', async ({ page }) => {
+
+//         //Login
+//         await page.goto('https://www.saucedemo.com/')
+//         await page.getByPlaceholder('Username').fill("visual_user")
+//         await page.waitForTimeout(1000)
+//         await page.locator('[id="password"]').fill("secret_sauce")
+//         await page.waitForTimeout(1000)
+//         await page.getByText('Login').click()
+        
+//         //Validate Home page after login
+//         await expect(page.getByText('Swag Labs')).toBeVisible()
+//         await expect(page.getByRole('button', { name: 'Open Menu' })).toBeVisible()
+//         await page.waitForTimeout(1000)
+//     });    
+// });

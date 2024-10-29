@@ -11,7 +11,7 @@
     "grepInvert": null,
     "maxFailures": 0,
     "metadata": {
-      "actualWorkers": 2
+      "actualWorkers": 5
     },
     "preserveOutput": "always",
     "reporter": [
@@ -44,8 +44,36 @@
         "repeatEach": 1,
         "retries": 0,
         "metadata": {},
-        "id": "chromium",
-        "name": "chromium",
+        "id": "desktop-smoke-test",
+        "name": "desktop-smoke-test",
+        "testDir": "/Users/sangannathan/Downloads/digitalskola/sesi9_ui_automate_nathan/playwright-ui-test-digitalskola/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/sangannathan/Downloads/digitalskola/sesi9_ui_automate_nathan/playwright-ui-test-digitalskola/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {},
+        "id": "mobile-device",
+        "name": "mobile-device",
+        "testDir": "/Users/sangannathan/Downloads/digitalskola/sesi9_ui_automate_nathan/playwright-ui-test-digitalskola/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/sangannathan/Downloads/digitalskola/sesi9_ui_automate_nathan/playwright-ui-test-digitalskola/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {},
+        "id": "firefox",
+        "name": "firefox",
         "testDir": "/Users/sangannathan/Downloads/digitalskola/sesi9_ui_automate_nathan/playwright-ui-test-digitalskola/tests",
         "testIgnore": [],
         "testMatch": [
@@ -57,7 +85,7 @@
     "shard": null,
     "updateSnapshots": "missing",
     "version": "1.48.1",
-    "workers": 4,
+    "workers": 5,
     "webServer": null
   },
   "suites": [
@@ -70,31 +98,34 @@
         {
           "title": "TC 1 - Successfull login until Checkout item from Cart using STANDARD user",
           "ok": true,
-          "tags": [],
+          "tags": [
+            "page-object",
+            "smoke"
+          ],
           "tests": [
             {
               "timeout": 30000,
               "annotations": [],
               "expectedStatus": "passed",
-              "projectId": "chromium",
-              "projectName": "chromium",
+              "projectId": "desktop-smoke-test",
+              "projectName": "desktop-smoke-test",
               "results": [
                 {
                   "workerIndex": 0,
                   "status": "passed",
-                  "duration": 1072,
+                  "duration": 2015,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2024-10-26T11:04:21.028Z",
+                  "startTime": "2024-10-29T07:48:54.945Z",
                   "attachments": []
                 }
               ],
               "status": "expected"
             }
           ],
-          "id": "2f9c6d2ba318db8e0d5f-808e4779985dd02a64ef",
+          "id": "2f9c6d2ba318db8e0d5f-f9daf5e76af775df2662",
           "file": "ui/saucedemo-po.spec.js",
           "line": 4,
           "column": 1
@@ -102,43 +133,354 @@
         {
           "title": "TC 2 - Successfull login until Checkout item from Cart using VISUAL user",
           "ok": true,
-          "tags": [],
+          "tags": [
+            "mobile"
+          ],
           "tests": [
             {
               "timeout": 30000,
               "annotations": [],
               "expectedStatus": "passed",
-              "projectId": "chromium",
-              "projectName": "chromium",
+              "projectId": "mobile-device",
+              "projectName": "mobile-device",
               "results": [
                 {
-                  "workerIndex": 1,
+                  "workerIndex": 3,
                   "status": "passed",
-                  "duration": 1138,
+                  "duration": 1576,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2024-10-26T11:04:21.028Z",
+                  "startTime": "2024-10-29T07:48:54.662Z",
                   "attachments": []
                 }
               ],
               "status": "expected"
             }
           ],
-          "id": "2f9c6d2ba318db8e0d5f-71850147afa4c5c48d32",
+          "id": "2f9c6d2ba318db8e0d5f-7301ad7a3530d81810c0",
           "file": "ui/saucedemo-po.spec.js",
           "line": 21,
           "column": 1
+        },
+        {
+          "title": "TC 1 - Successfull login until Checkout item from Cart using STANDARD user",
+          "ok": true,
+          "tags": [
+            "page-object",
+            "smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "status": "passed",
+                  "duration": 1921,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2024-10-29T07:48:55.949Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2f9c6d2ba318db8e0d5f-891ff3b6ed8d8a07851a",
+          "file": "ui/saucedemo-po.spec.js",
+          "line": 4,
+          "column": 1
+        },
+        {
+          "title": "TC 2 - Successfull login until Checkout item from Cart using VISUAL user",
+          "ok": true,
+          "tags": [
+            "mobile"
+          ],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "status": "passed",
+                  "duration": 1929,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2024-10-29T07:48:57.296Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2f9c6d2ba318db8e0d5f-ac876b66b73261fbb299",
+          "file": "ui/saucedemo-po.spec.js",
+          "line": 21,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "ui/saucedemo.spec.js",
+      "file": "ui/saucedemo.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Web UI Demo",
+          "file": "ui/saucedemo.spec.js",
+          "line": 3,
+          "column": 6,
+          "specs": [
+            {
+              "title": "TC-1 Successful login using standard user until checkout item",
+              "ok": true,
+              "tags": [
+                "smoke"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop-smoke-test",
+                  "projectName": "desktop-smoke-test",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "status": "passed",
+                      "duration": 11909,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2024-10-29T07:48:55.716Z",
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "ca363b286a129dfa4e77-c4a0545f39d8c94c8e09",
+              "file": "ui/saucedemo.spec.js",
+              "line": 4,
+              "column": 5
+            },
+            {
+              "title": "TC-2 Successful login using Visual user",
+              "ok": true,
+              "tags": [
+                "smoke"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop-smoke-test",
+                  "projectName": "desktop-smoke-test",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "status": "passed",
+                      "duration": 3756,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2024-10-29T07:48:55.499Z",
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "ca363b286a129dfa4e77-33d6bfbb53b46c704a8c",
+              "file": "ui/saucedemo.spec.js",
+              "line": 50,
+              "column": 5
+            },
+            {
+              "title": "TC-1 Successful login using standard user until checkout item",
+              "ok": true,
+              "tags": [
+                "smoke"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 6,
+                      "status": "passed",
+                      "duration": 12784,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2024-10-29T07:48:57.727Z",
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "ca363b286a129dfa4e77-95dfe601dba43e9bff02",
+              "file": "ui/saucedemo.spec.js",
+              "line": 4,
+              "column": 5
+            },
+            {
+              "title": "TC-2 Successful login using Visual user",
+              "ok": true,
+              "tags": [
+                "smoke"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "status": "passed",
+                      "duration": 3683,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2024-10-29T07:48:58.632Z",
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "ca363b286a129dfa4e77-24e1116eb895e6c09f0c",
+              "file": "ui/saucedemo.spec.js",
+              "line": 50,
+              "column": 5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "api/reqres.spec.js",
+      "file": "api/reqres.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "API Test",
+          "file": "api/reqres.spec.js",
+          "line": 6,
+          "column": 6,
+          "specs": [
+            {
+              "title": "Get Request",
+              "ok": true,
+              "tags": [
+                "api",
+                "smoke"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "status": "passed",
+                      "duration": 440,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2024-10-29T07:48:55.287Z",
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "c4d5159cd6317170b565-ab0f09a1b039c8974615",
+              "file": "api/reqres.spec.js",
+              "line": 8,
+              "column": 5
+            },
+            {
+              "title": "POST request",
+              "ok": true,
+              "tags": [
+                "api",
+                "smoke"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "status": "passed",
+                      "duration": 204,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2024-10-29T07:48:55.735Z",
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "c4d5159cd6317170b565-684516d7e20ec6dc00d6",
+              "file": "api/reqres.spec.js",
+              "line": 15,
+              "column": 5
+            }
+          ]
         }
       ]
     }
   ],
   "errors": [],
   "stats": {
-    "startTime": "2024-10-26T11:04:20.739Z",
-    "duration": 1882.6509999999998,
-    "expected": 2,
+    "startTime": "2024-10-29T07:48:54.060Z",
+    "duration": 17185.172,
+    "expected": 10,
     "skipped": 0,
     "unexpected": 0,
     "flaky": 0
